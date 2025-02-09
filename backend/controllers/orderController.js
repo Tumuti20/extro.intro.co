@@ -2,11 +2,15 @@ import orderModel from "../models/orderModel.js"
 import userModel from "../models/userModel.js"
 import Stripe from "stripe"
 
+
 // global variables for payments
 const currency = "kes"
 
 //STRIPE GATEWAY INITIALIZATION
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
+
+//mpesa gateway initialization
+
 
 //controller function for placing orders using cod method
 const placeOrder = async (req,res)=>{
@@ -33,6 +37,7 @@ try {
     res.json({ success: false, message: error.message})
 }
 }
+// controller function for placing orders using mpesa method
 
 //controller function for placing orders using stripe method
 const placeOrderStripe = async (req,res)=>{

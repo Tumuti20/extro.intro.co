@@ -192,6 +192,14 @@ const PlaceOrder = () => {
                     stripe
                   </div>
                   <div
+                    onClick={() => setMethod("mpesa")}
+                    className={`${
+                      method === "mpesa" ? "btn-dark" : "btn-white"
+                    } !py-1 text-xs cursor-pointer`}
+                  >
+                    mpesa
+                  </div>
+                  <div
                     onClick={() => setMethod("cod")}
                     className={`${
                       method === "cod" ? "btn-dark" : "btn-white"
