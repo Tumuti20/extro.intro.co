@@ -2,40 +2,40 @@ import React from "react";
 
 const ShippingStatus = () => {
   return (
-    <div className=" mx-auto p-6 bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg rounded-lg">
-      <h2 className="text-3xl font-bold text-center mb-6 text-yellow-300">Extro.Intro Shipping Status</h2>
+    <div className=" mx-auto p-6  to-purple-600 text-gray shadow-lg rounded-lg">
+      <h2 className="text-3xl font-bold text-center mb-6 text-black">Extro.Intro Shipping Status</h2>
 
       <section className="mb-6">
-        <h3 className="text-xl font-semibold text-yellow-200">Track Your Order with Ease</h3>
+        <h3 className="text-xl font-semibold text-black">Track Your Order with Ease</h3>
         <p>
           At Extro.Intro, we understand how important it is for you to stay informed about the status of your order. Whether you’re eagerly awaiting your latest fashion piece or checking on a gift for a loved one, we ensure a seamless tracking experience. Our shipping status system allows you to check the location of your package, estimated delivery time, and current status effortlessly.
         </p>
       </section>
 
       <section className="mb-6">
-        <h3 className="text-xl font-semibold text-yellow-200">Shipping Status Definitions</h3>
+        <h3 className="text-xl font-semibold text-black">Shipping Status Definitions</h3>
         <ul className="list-disc pl-6">
-          <li><strong className="text-yellow-300">Processing:</strong> Your order has been received and is being prepared for shipment.</li>
-          <li><strong className="text-yellow-300">Shipped:</strong> Your order has left our warehouse and is on its way to you.</li>
-          <li><strong className="text-yellow-300">In Transit:</strong> Your order is moving through our logistics network.</li>
-          <li><strong className="text-yellow-300">Out for Delivery:</strong> Your package is with a courier and will arrive soon.</li>
-          <li><strong className="text-yellow-300">Delivered:</strong> Your package has arrived at its final destination.</li>
-          <li><strong className="text-yellow-300">Exception:</strong> There may be a delay due to unforeseen circumstances (weather, customs clearance, etc.).</li>
+          <li><strong className="text-black" >Processing:</strong> Your order has been received and is being prepared for shipment.</li>
+          <li><strong className="text-black" >Shipped:</strong> Your order has left our warehouse and is on its way to you.</li>
+          <li><strong className="text-black" >In Transit:</strong> Your order is moving through our logistics network.</li>
+          <li><strong className="text-black" >Out for Delivery:</strong> Your package is with a courier and will arrive soon.</li>
+          <li><strong className="text-black" >Delivered:</strong> Your package has arrived at its final destination.</li>
+          <li><strong className="text-black" >Exception:</strong> There may be a delay due to unforeseen circumstances (weather, customs clearance, etc.).</li>
         </ul>
       </section>
 
       <section className="mb-6">
-        <h3 className="text-xl font-semibold text-yellow-200">Estimated Delivery Time</h3>
+        <h3 className="text-xl font-semibold text-black">Estimated Delivery Time</h3>
         <ul className="list-disc pl-6">
-          <li><strong className="text-yellow-300">Local Deliveries (Kenya):</strong> 2-5 business days</li>
-          <li><strong className="text-yellow-300">East African Region:</strong> 5-10 business days</li>
-          <li><strong className="text-yellow-300">International Deliveries:</strong> 7-14 business days</li>
+          <li><strong className="text-black">Local Deliveries (Kenya):</strong> 2-5 business days</li>
+          <li><strong className="text-black">East African Region:</strong> 5-10 business days</li>
+          <li><strong className="text-black">International Deliveries:</strong> 7-14 business days</li>
         </ul>
         <p>Expedited shipping options are available at checkout for faster delivery times.</p>
       </section>
 
       <section className="mb-6">
-        <h3 className="text-xl font-semibold text-yellow-200">What If My Order is Delayed?</h3>
+        <h3 className="text-xl font-semibold text-black">What If My Order is Delayed?</h3>
         <p>While we strive to ensure timely deliveries, there are situations where delays may occur due to factors beyond our control, such as:</p>
         <ul className="list-disc pl-6">
           <li>High order volumes during peak seasons</li>
@@ -43,11 +43,11 @@ const ShippingStatus = () => {
           <li>Weather disruptions</li>
           <li>Logistics network delays</li>
         </ul>
-        <p>If your order has not arrived within the estimated time, please contact our support team at <strong className="text-yellow-300">support@extrointro.com</strong> or call <strong className="text-yellow-300">+254 714 102 214</strong> for further assistance.</p>
+        <p>If your order has not arrived within the estimated time, please contact our support team at <strong className="text-black">support@extrointro.com</strong> or call <strong className="text-black font-extrabold">+254 714 102 214</strong> for further assistance.</p>
       </section>
 
       <section className="mb-6">
-        <h3 className="text-xl font-semibold text-yellow-200">Change of Delivery Address</h3>
+        <h3 className="text-xl font-semibold text-black">Change of Delivery Address</h3>
         <p>If you need to update your delivery address after placing an order, please follow these steps:</p>
         <ul className="list-disc pl-6">
           <li>Contact our customer support team as soon as possible with your order number and new address.</li>
@@ -57,7 +57,7 @@ const ShippingStatus = () => {
       </section>
 
       <section className="mb-6">
-        <h3 className="text-xl font-semibold text-yellow-200">Missing or Lost Packages</h3>
+        <h3 className="text-xl font-semibold text-black">Missing or Lost Packages</h3>
         <p>In rare cases, packages may go missing during transit. If your order tracking shows as delivered but you have not received it:</p>
         <ul className="list-disc pl-6">
           <li>Check with your neighbors or building concierge in case they accepted the package on your behalf.</li>
@@ -68,22 +68,22 @@ const ShippingStatus = () => {
       </section>
 
       <section className="mb-6">
-        <h3 className="text-xl font-semibold text-yellow-200">Shipping Fees & Customs Duties</h3>
-        <p><strong className="text-yellow-300">Shipping Fees:</strong> Calculated at checkout based on delivery location and order size.</p>
-        <p><strong className="text-yellow-300">International Orders:</strong> Customs duties and taxes may apply, which are the responsibility of the customer.</p>
+        <h3 className="text-xl font-semibold text-black">Shipping Fees & Customs Duties</h3>
+        <p><strong className="text-black">Shipping Fees:</strong> Calculated at checkout based on delivery location and order size.</p>
+        <p><strong className="text-black">International Orders:</strong> Customs duties and taxes may apply, which are the responsibility of the customer.</p>
       </section>
 
       <section>
-        <h3 className="text-xl font-semibold text-yellow-200">Contact Us</h3>
+        <h3 className="text-xl font-semibold text-black">Contact Us</h3>
         <p>If you have any concerns or questions regarding your shipping status, don’t hesitate to reach out:</p>
         <ul className="list-disc pl-6">
-          <li><strong className="text-yellow-300">Email:</strong> support@extrointro.com</li>
-          <li><strong className="text-yellow-300">Phone:</strong> +254 714 102 214</li>
-          <li><strong className="text-yellow-300">Live Chat:</strong> Available on our website from 9 AM - 6 PM (Monday - Saturday)</li>
+          <li><strong className="text-black">Email:</strong> support@extrointro.com</li>
+          <li><strong className="text-black">Phone:</strong> +254 714 102 214</li>
+          <li><strong className="text-black">Live Chat:</strong> Available on our website from 9 AM - 6 PM (Monday - Saturday)</li>
         </ul>
       </section>
 
-      <p className="text-center mt-6 font-semibold text-yellow-300">Thank you for shopping with Extro.Intro! We appreciate your support and strive to provide a smooth and reliable shipping experience.</p>
+      <p className="text-center mt-6 font-semibold text-black">Thank you for shopping with Extro.Intro! We appreciate your support and strive to provide a smooth and reliable shipping experience.</p>
     </div>
   );
 };

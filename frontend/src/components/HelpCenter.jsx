@@ -3,7 +3,7 @@ import React from "react";
 const HelpCenter = () => {
   return (
     <div className="maz-padd-container   mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-4">Welcome to the Extro.Intro Help Center</h1>
+      <h1 className="text-3xl text-center font-bold mb-4">Welcome to the Extro.Intro Help Center</h1>
       <p>
         At Extro.Intro, we are committed to providing you with the best shopping experience possible. 
         Whether you have questions about our products, orders, or policies, we are here to assist you every step of the way.
