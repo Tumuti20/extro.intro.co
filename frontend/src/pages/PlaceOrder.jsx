@@ -184,7 +184,7 @@ const PlaceOrder = () => {
                 <h3 className="bold-20 mb-5">
                   Payment <span className="text-secondary"> Method </span>
                 </h3>
-                <div className="flex gap-2">
+                <div className="flex gap-3">
                   <div
                     onClick={() => setMethod("googlepay")}
                     className={`${
