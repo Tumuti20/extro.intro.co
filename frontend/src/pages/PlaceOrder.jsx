@@ -184,22 +184,14 @@ const PlaceOrder = () => {
                 <h3 className="bold-20 mb-5">
                   Payment <span className="text-secondary"> Method </span>
                 </h3>
-                <div className="flex gap-3">
-                  <div
-                    onClick={() => setMethod("stripe")}
-                    className={`${
-                      method === "stripe" ? "btn-dark" : "btn-white"
-                    } !py-1 text-xs cursor-pointer`}
-                  >
-                    stripe
-                  </div>
+                <div className="flex gap-5">
                   <div
                     onClick={() => setMethod("googlepay")}
                     className={`${
                       method === "googlepay" ? "btn-dark" : "btn-white"
-                    } !py-1 text-xs cursor-pointer`}
+                    } !py-1 text-xs cursor-pointer `}
                   >
-                    <img src={googlepay} alt="" className="w-20" />
+                    <img src={googlepay} alt="" className="w-20"  />
                   </div>
                   <div
                     onClick={() => setMethod("mpesa")}
@@ -207,13 +199,13 @@ const PlaceOrder = () => {
                       method === "mpesa" ? "btn-dark" : "btn-white"
                     } !py-1 text-xs cursor-pointer`}
                   >
-                  <img src={mpesa} alt="" className="w-10" />
+                  <img src={mpesa} alt="" className="w-20 " />
                   </div>
                   <div
                     onClick={() => setMethod("cod")}
                     className={`${
                       method === "cod" ? "btn-dark" : "btn-white"
-                    } !py-1 text-xs cursor-pointer`}
+                    } !py-1 text-xs  cursor-pointer`}
                   >
                     Cash on Delivery
                   </div>
