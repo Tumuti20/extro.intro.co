@@ -7,8 +7,8 @@ const ProductDescription = () => {
         <button className="medium-14 p-3 w-32 border-b-2 border-secondary">
           Description
         </button>
-        <button className="medium-14 p-3 w-32 border-b-2">Care Guide</button>
-        <button className="medium-14 p-3 w-32 border-b-2">Size Guide</button>
+        <button className="medium-14 p-3 w-32 border-b-2 border-secondary">Care Guide</button>
+        <button className="medium-14 p-3 w-32 border-b-2 border-secondary">Size Guide</button>
       </div>
       <hr className="h-[1px] w-full " />
       <div className="flex flex-col gap-3 p-3">

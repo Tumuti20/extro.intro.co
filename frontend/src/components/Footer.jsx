@@ -52,27 +52,27 @@ const Footer = () => {
           <ul>
             <h4 className="h4 mb-3">Customer Service</h4>
             <li className="my-2">
-              <a href="" className="text-gray-30 regular-14 ">
+              <a href="/help-center" className="text-gray-30 regular-14 ">
                 Help center
               </a>
             </li>
             <li className="my-2">
-              <a href="" className="text-gray-30 regular-14 ">
+              <a href="/payment-methods" className="text-gray-30 regular-14 ">
                 Payment methods
               </a>
             </li>
             <li className="my-2">
-              <a href="" className="text-gray-30 regular-14 ">
+              <a href="contact" className="text-gray-30 regular-14 ">
                 Contact
               </a>
             </li>
             <li className="my-2">
-              <a href="" className="text-gray-30 regular-14 ">
+              <a href="shipping-status" className="text-gray-30 regular-14 ">
                 Shipping status
               </a>
             </li>
             <li className="my-2">
-              <a href="" className="text-gray-30 regular-14 ">
+              <a href="complaints" className="text-gray-30 regular-14 ">
                 Complaints
               </a>
             </li>

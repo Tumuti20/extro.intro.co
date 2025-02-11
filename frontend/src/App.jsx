@@ -12,6 +12,11 @@ import PlaceOrder from './pages/PlaceOrder'
 import Login from './pages/Login'
 import Orders from './components/Orders'
 import Verify from './pages/Verify'
+import HelpCenter from './components/HelpCenter'
+import PaymentMethods from './components/PaymentMethods'
+import Contact from './components/Contact'
+import ShippingStatus from './components/ShippingStatus'
+import Complaints from './components/Complaints'
 
 const App = () => {
   return (
@@ -28,6 +33,11 @@ const App = () => {
         <Route path="/place-order" element={<PlaceOrder />} />
         <Route path="/orders" element={<Orders />} />
         <Route path="/verify" element={<Verify />} />
+        <Route path="/help-center" element={<HelpCenter />} />
+        <Route path="/payment-methods" element={<PaymentMethods />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/shipping-status" element={<ShippingStatus />} />
+        <Route path="/complaints" element={<Complaints />} />
       </Routes>
     </main>
   )
