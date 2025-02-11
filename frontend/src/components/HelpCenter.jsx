@@ -1,8 +1,9 @@
 import React from "react";
+import Footer from "./Footer";
 
 const HelpCenter = () => {
   return (
-    <div className="maz-padd-container   mx-auto p-6">
+    <div className="max-padd-container   mx-auto p-6">
       <h1 className="text-3xl text-center font-bold mb-4">Welcome to the Extro.Intro Help Center</h1>
       <p>
         At Extro.Intro, we are committed to providing you with the best shopping experience possible. 
@@ -85,6 +86,8 @@ const HelpCenter = () => {
       <p>For full details on our terms and conditions, privacy policy, and cookie usage, please visit our Legal section.</p>
 
       <p className="mt-6">We hope this Help Center provides you with all the information you need. Thank you for being part of the Extro.Intro family – where fashion meets personality!</p>
+
+      <Footer />
     </div>
   );
 };

@@ -1,8 +1,9 @@
 import React from "react";
+import Footer from "./Footer";
 
 const ShippingStatus = () => {
   return (
-    <div className=" mx-auto p-6  to-purple-600 text-gray shadow-lg rounded-lg">
+    <div className=" max-padd-container mx-auto p-6  to-purple-600 text-gray shadow-lg rounded-lg">
       <h2 className="text-3xl font-bold text-center mb-6 text-black">Extro.Intro Shipping Status</h2>
 
       <section className="mb-6">
@@ -84,6 +85,8 @@ const ShippingStatus = () => {
       </section>
 
       <p className="text-center mt-6 font-semibold text-black">Thank you for shopping with Extro.Intro! We appreciate your support and strive to provide a smooth and reliable shipping experience.</p>
+
+      <Footer />
     </div>
   );
 };
