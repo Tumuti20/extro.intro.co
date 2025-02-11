@@ -4,6 +4,8 @@ import CartTotal from "../components/CartTotal";
 import Footer from "../components/Footer";
 import { ShopContext } from "../context/ShopContext";
 import axios from "axios";
+import mpesa from "../assets/mpesa.png"
+import googlepay from "../assets/googlepay.png"
 
 const PlaceOrder = () => {
   const { navigate, token, cartItems, setCartItems, getCartAmount, products, backendUrl } =
@@ -192,12 +194,20 @@ const PlaceOrder = () => {
                     stripe
                   </div>
                   <div
+                    onClick={() => setMethod("googlepay")}
+                    className={`${
+                      method === "googlepay" ? "btn-dark" : "btn-white"
+                    } !py-1 text-xs cursor-pointer`}
+                  >
+                    <img src={googlepay} alt="" className="w-20" />
+                  </div>
+                  <div
                     onClick={() => setMethod("mpesa")}
                     className={`${
                       method === "mpesa" ? "btn-dark" : "btn-white"
                     } !py-1 text-xs cursor-pointer`}
                   >
-                    mpesa
+                  <img src={mpesa} alt="" className="w-10" />
                   </div>
                   <div
                     onClick={() => setMethod("cod")}
