@@ -3,7 +3,7 @@ import Footer from "./Footer";
 
 const CustomerComplaintsPolicy = () => {
   return (
-    <div className="max-padd-container max-w-6xl mx-auto p-8  from-blue-50 to-white shadow-xl rounded-lg">
+    <div className="max-padd-container py-10">
       <h2 className="text-4xl font-bold text-center mb-8 text-black">Extro.Intro Customer Complaints Policy and Resolution Process</h2>
       
       <section className="mb-8">
@@ -93,7 +93,7 @@ const CustomerComplaintsPolicy = () => {
           <li><strong>Email:</strong> support@extrointro.com</li>
           <li><strong>Phone:</strong> +254 714 1022 14</li>
           <li><strong>Website:</strong> http://extrointro.vercel.app</li>
-          <li><strong>Social Media:</strong> @extro_intro</li>
+          <li><strong>Social Media:</strong> @_extro.intro</li>
         </ul>
       </section>
 

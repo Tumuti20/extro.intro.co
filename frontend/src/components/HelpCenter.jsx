@@ -21,7 +21,7 @@ const HelpCenter = () => {
       <h3 className="text-lg font-semibold mt-4">Accepted Payment Methods</h3>
       <ul className="list-disc pl-5">
         <li>Credit/Debit Cards (Visa, MasterCard)</li>
-        <li>Mobile Money (M-Pesa, Airtel Money, )</li>
+        <li>Mobile Money (M-Pesa, )</li>
       </ul>
 
       <h2 className="text-xl font-semibold mt-6">Shipping & Delivery</h2>

@@ -80,7 +80,7 @@ const ShippingStatus = () => {
         <ul className="list-disc pl-6">
           <li><strong className="text-black">Email:</strong> support@extrointro.com</li>
           <li><strong className="text-black">Phone:</strong> +254 714 102 214</li>
-          <li><strong className="text-black">Live Chat:</strong> Available on our website from 9 AM - 6 PM (Monday - Saturday)</li>
+          <li><strong className="text-black">Live Chat:</strong> Available on our Instagram from 9 AM - 6 PM (Monday - Saturday)</li>
         </ul>
       </section>
 
