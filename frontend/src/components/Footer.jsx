@@ -80,17 +80,17 @@ const Footer = () => {
           <ul>
             <h4 className="h4 mb-3">Legal</h4>
             <li className="my-2">
-              <a href="" className="text-gray-30 regular-14 ">
+              <a href="/privacypolicy" className="text-gray-30 regular-14 ">
                 Privacy Policy
               </a>
             </li>
             <li className="my-2">
-              <a href="" className="text-gray-30 regular-14 ">
+              <a href="/cookiesettings" className="text-gray-30 regular-14 ">
                 Cookie settings
               </a>
             </li>
             <li className="my-2">
-              <a href="" className="text-gray-30 regular-14 ">
+              <a href="termsconditions" className="text-gray-30 regular-14 ">
                 Terms & conditions
               </a>
             </li>

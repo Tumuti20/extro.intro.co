@@ -17,6 +17,9 @@ import PaymentMethods from './components/PaymentMethods'
 import Contact from './components/Contact'
 import ShippingStatus from './components/ShippingStatus'
 import Complaints from './components/Complaints'
+import PrivacyPolicy from './components/PrivacyPolicy'
+import CookieSettings from './components/CookieSettings'
+import TermConditions from './components/TermConditions'
 
 const App = () => {
   return (
@@ -38,6 +41,9 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/shipping-status" element={<ShippingStatus />} />
         <Route path="/complaints" element={<Complaints />} />
+        <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+        <Route path="/cookiesettings" element={<CookieSettings />} />
+        <Route path="/termsconditions" element={<TermConditions />} />
       </Routes>
     </main>
   )
