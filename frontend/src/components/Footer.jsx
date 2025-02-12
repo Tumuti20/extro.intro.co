@@ -95,12 +95,12 @@ const Footer = () => {
               </a>
             </li>
             <li className="my-2">
-              <a href="" className="text-gray-30 regular-14 ">
+              <a href="/cancellationpolicy" className="text-gray-30 regular-14 ">
                 Cancellation
               </a>
             </li>
             <li className="my-2">
-              <a href="" className="text-gray-30 regular-14 ">
+              <a href="imprint" className="text-gray-30 regular-14 ">
                 Imprint
               </a>
             </li>

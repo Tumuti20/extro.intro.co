@@ -20,6 +20,8 @@ import Complaints from './components/Complaints'
 import PrivacyPolicy from './components/PrivacyPolicy'
 import CookieSettings from './components/CookieSettings'
 import TermConditions from './components/TermConditions'
+import CancellationPolicy from './components/Cancellation'
+import Imprint from './components/Imprint'
 
 const App = () => {
   return (
@@ -44,6 +46,8 @@ const App = () => {
         <Route path="/privacypolicy" element={<PrivacyPolicy />} />
         <Route path="/cookiesettings" element={<CookieSettings />} />
         <Route path="/termsconditions" element={<TermConditions />} />
+        <Route path="/cancellationpolicy" element={<CancellationPolicy />} />
+        <Route path="/imprint" element={<Imprint />} />
       </Routes>
     </main>
   )
