@@ -1,12 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import Footer from "./Footer";
 
 const HelpCenter = () => {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/samueltumuti20@gmail.com", {
+        method: "POST",
+        body: formData,
+        headers: {
+          "Accept": "application/json",
+        },
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        e.target.reset(); // Reset form after successful submission
+      } else {
+        alert("Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      alert("Something went wrong. Please try again.");
+    }
+  };
+
   return (
-    <div className="max-padd-container   mx-auto p-6">
+    <div className="max-padd-container mx-auto p-6">
       <h1 className="text-3xl text-center font-bold mb-4">Welcome to the Extro.Intro Help Center</h1>
       <p>
-        At Extro.Intro, we are committed to providing you with the best shopping experience possible. 
+        At Extro.Intro, we are committed to providing you with the best shopping experience possible.
         Whether you have questions about our products, orders, or policies, we are here to assist you every step of the way.
       </p>
 
@@ -21,14 +47,12 @@ const HelpCenter = () => {
       <h3 className="text-lg font-semibold mt-4">Accepted Payment Methods</h3>
       <ul className="list-disc pl-5">
         <li>Credit/Debit Cards (Visa, MasterCard)</li>
-        <li>Mobile Money (M-Pesa, )</li>
+        <li>Mobile Money (M-Pesa)</li>
       </ul>
 
       <h2 className="text-xl font-semibold mt-6">Shipping & Delivery</h2>
       <h3 className="text-lg font-semibold mt-4">Shipping Policy</h3>
-      <p>
-        We offer fast and reliable shipping options both locally and internationally. Estimated delivery times vary based on location:
-      </p>
+      <p>We offer fast and reliable shipping options both locally and internationally. Estimated delivery times vary based on location:</p>
       <ul className="list-disc pl-5">
         <li><strong>Local Deliveries (Kenya)</strong>: 2-5 business days</li>
         <li><strong>International Deliveries</strong>: 7-14 business days</li>
@@ -38,7 +62,7 @@ const HelpCenter = () => {
       <p>Shipping costs depend on the destination and order size. You will see the final shipping cost at checkout before payment.</p>
 
       <h3 className="text-lg font-semibold mt-4">Tracking Your Order</h3>
-      <p>Once your order is shipped, you will receive an email  to monitor your shipment.</p>
+      <p>Once your order is shipped, you will receive an email to monitor your shipment.</p>
 
       <h2 className="text-xl font-semibold mt-6">Returns & Refunds</h2>
       <h3 className="text-lg font-semibold mt-4">Return Policy</h3>
@@ -87,10 +111,53 @@ const HelpCenter = () => {
 
       <p className="mt-6">We hope this Help Center provides you with all the information you need. Thank you for being part of the Extro.Intro family – where fashion meets personality!</p>
 
+      {/* Contact Form */}
+      <h2 className="text-xl font-semibold mt-6">Send Us a Message</h2>
+      <form onSubmit={handleSubmit} className="mt-6 p-4 border border-gray-300 rounded-md">
+        <div className="mb-4">
+          <label className="block font-semibold">Email:</label>
+          <input
+            type="email"
+            name="email"
+            className="w-full p-2 border rounded"
+            required
+          />
+        </div>
+
+        <div className="mb-4">
+          <label className="block font-semibold">Phone Number:</label>
+          <input
+            type="text"
+            name="phone"
+            className="w-full p-2 border rounded"
+            required
+          />
+        </div>
+
+        <div className="mb-4">
+          <label className="block font-semibold">Message:</label>
+          <textarea
+            name="message"
+            className="w-full p-2 border rounded"
+            rows="4"
+            required
+          ></textarea>
+        </div>
+
+        <button type="submit" className="px-4 py-2 bg-secondary text-white rounded">
+          Submit
+        </button>
+      </form>
+
+      {isSubmitted && (
+        <p className="mt-4 text-secondary font-semibold">
+          ✅ Message sent successfully! We’ll get back to you soon.
+        </p>
+      )}
+
       <Footer />
     </div>
   );
 };
 
 export default HelpCenter;
-

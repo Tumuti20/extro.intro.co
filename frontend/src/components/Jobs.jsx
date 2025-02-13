@@ -8,23 +8,41 @@ const JobsPage = () => {
     position: "",
     message: "",
   });
+  const [status, setStatus] = useState(""); // To show success/error messages
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setStatus("Sending...");
 
-    // Construct mailto link
-    const email = "samueltumuti20@gmail.com";
-    const subject = encodeURIComponent(`Job Application for ${formData.position}`);
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\nPosition: ${formData.position}\n\nMessage:\n${formData.message}`
-    );
+    const formDataToSend = new FormData();
+    formDataToSend.append("name", formData.name);
+    formDataToSend.append("email", formData.email);
+    formDataToSend.append("position", formData.position);
+    formDataToSend.append("message", formData.message);
+    formDataToSend.append("_subject", `Job Application for ${formData.position}`);
 
-    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+    formDataToSend.append("_captcha", "false"); // Disable captcha
+
+    try {
+      const response = await fetch("https://formsubmit.co/samueltumuti20@gmail.com", {
+        method: "POST",
+        body: formDataToSend,
+      });
+
+      if (response.ok) {
+        setStatus("✅ Message submitted successfully!");
+        setFormData({ name: "", email: "", position: "", message: "" }); // Clear form
+      } else {
+        setStatus("❌ Error sending application. Try again.");
+      }
+    } catch (error) {
+      setStatus("❌ Error: Unable to send application.");
+    }
   };
 
   return (
@@ -55,7 +73,7 @@ const JobsPage = () => {
         <h2 className="text-2xl font-semibold mb-4">Apply for a Job</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block font-semibold" aria-label="Full Name">Full Name</label>
+            <label className="block font-semibold">Full Name</label>
             <input
               type="text"
               name="name"
@@ -67,7 +85,7 @@ const JobsPage = () => {
           </div>
 
           <div>
-            <label className="block font-semibold" aria-label="Email Address">Email Address</label>
+            <label className="block font-semibold">Email Address</label>
             <input
               type="email"
               name="email"
@@ -79,7 +97,7 @@ const JobsPage = () => {
           </div>
 
           <div>
-            <label className="block font-semibold" aria-label="Position Applying For">Position Applying For</label>
+            <label className="block font-semibold">Position Applying For</label>
             <input
               type="text"
               name="position"
@@ -91,7 +109,7 @@ const JobsPage = () => {
           </div>
 
           <div>
-            <label className="block font-semibold" aria-label="Cover Letter / Message">Cover Letter / Message</label>
+            <label className="block font-semibold">Cover Letter / Message</label>
             <textarea
               name="message"
               value={formData.message}
@@ -109,6 +127,8 @@ const JobsPage = () => {
             Submit Application
           </button>
         </form>
+
+        {status && <p className="mt-4 text-center font-semibold">{status}</p>}
       </section>
 
       <section>
