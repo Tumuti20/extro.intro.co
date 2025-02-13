@@ -108,27 +108,27 @@ const Footer = () => {
           <ul>
             <h4 className="h4 mb-3">Others</h4>
             <li className="my-2">
-              <a href="" className="text-gray-30 regular-14 ">
+              <a href="/ourteam" className="text-gray-30 regular-14 ">
                 Our teams
               </a>
             </li>
             <li className="my-2">
-              <a href="" className="text-gray-30 regular-14 ">
+              <a href="/sustainability" className="text-gray-30 regular-14 ">
                 Sustainability
               </a>
             </li>
             <li className="my-2">
-              <a href="" className="text-gray-30 regular-14 ">
+              <a href="/press" className="text-gray-30 regular-14 ">
                 Press
               </a>
             </li>
             <li className="my-2">
-              <a href="" className="text-gray-30 regular-14 ">
+              <a href="/jobs" className="text-gray-30 regular-14 ">
                 Jobs
               </a>
             </li>
             <li className="my-2">
-              <a href="" className="text-gray-30 regular-14 ">
+              <a href="newsletter" className="text-gray-30 regular-14 ">
                 Newsletter
               </a>
             </li>

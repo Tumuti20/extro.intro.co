@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import { ShopContext } from "../context/ShopContext";
 import axios from "axios";
 import mpesa from "../assets/mpesa.png"
-import googlepay from "../assets/googlepay.png"
+// import googlepay from "../assets/googlepay.png"
 
 const PlaceOrder = () => {
   const { navigate, token, cartItems, setCartItems, getCartAmount, products, backendUrl } =
@@ -82,6 +82,8 @@ const PlaceOrder = () => {
       console.log(error)
       toast.error(error.message)
      }
+
+          // api calls for M-pesa
     }
   return (
     <div>

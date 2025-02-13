@@ -22,6 +22,11 @@ import CookieSettings from './components/CookieSettings'
 import TermConditions from './components/TermConditions'
 import CancellationPolicy from './components/Cancellation'
 import Imprint from './components/Imprint'
+import OurTeam from './components/OurTeam'
+import Sustainability from './components/Sustainability'
+import Press from './components/Press'
+import Jobs from './components/Jobs'
+import NewsLetter from './components/NewsLetter'
 
 const App = () => {
   return (
@@ -48,6 +53,11 @@ const App = () => {
         <Route path="/termsconditions" element={<TermConditions />} />
         <Route path="/cancellationpolicy" element={<CancellationPolicy />} />
         <Route path="/imprint" element={<Imprint />} />
+        <Route path="/ourteam" element={<OurTeam />} />
+        <Route path="/sustainability" element={<Sustainability />} />
+        <Route path="/press" element={<Press />} />
+        <Route path="/jobs" element={<Jobs />} />
+        <Route path="/newsletter" element={<NewsLetter />} />
       </Routes>
     </main>
   )
