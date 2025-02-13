@@ -29,6 +29,7 @@ const HelpCenter = () => {
   };
 
   return (
+    <div>
     <div className="max-padd-container mx-auto p-6">
       <h1 className="text-3xl text-center font-bold mb-4">Welcome to the Extro.Intro Help Center</h1>
       <p>
@@ -155,6 +156,7 @@ const HelpCenter = () => {
         </p>
       )}
 
+    </div>
       <Footer />
     </div>
   );

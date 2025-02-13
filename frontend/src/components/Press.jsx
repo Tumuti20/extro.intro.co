@@ -3,6 +3,7 @@ import Footer from './Footer';
 
 const PressPage = () => {
   return (
+    <div>
     <div className="max-padd-container text-black p-6">
       <h1 className="text-4xl text-center font-bold mb-6">Press & Media at Extrovert Introvert Clothing Company</h1>
       <p className="mb-6">
@@ -51,6 +52,7 @@ const PressPage = () => {
           Extrovert Introvert Clothing Company is more than just a brand; it’s a movement. We invite journalists, bloggers, and content creators to help us tell our story. Thank you for your support in sharing our mission with the world!
         </p>
       </section>
+    </div>
       <Footer />
     </div>
   );

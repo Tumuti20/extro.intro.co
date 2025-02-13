@@ -3,6 +3,7 @@ import Footer from "./Footer";
 
 const PaymentMethods = () => {
   return (
+    <div>
     <div className="max-padd-container text-black min-h-screen p-10">
       <div className="   mx-auto p-6">
         <h1 className="text-4xl font-bold text-center text-black mb-8">
@@ -85,6 +86,7 @@ const PaymentMethods = () => {
         </section>
       </div>
 
+    </div>
       <Footer />
     </div>
   );

@@ -3,6 +3,7 @@ import Footer from "./Footer";
 
 const ContactInfo = () => {
   return (
+    <div>
     <div className="max-padd-container text-black p-10 min-h-screen">
       <div className="max-w-6xl ">
         <h1 className="text-4xl font-bold mb-6">Contact Us - Extrovert Introvert</h1>
@@ -73,6 +74,7 @@ const ContactInfo = () => {
           </p>
         </div>
       </div>
+    </div>
       <Footer />
     </div>
   );

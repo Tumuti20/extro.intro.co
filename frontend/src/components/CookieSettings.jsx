@@ -3,6 +3,7 @@ import Footer from "./Footer";
 
 const CookiePolicy = () => {
   return (
+    <div>
     <div className="max-padd-container mx-auto p-6">
       <h1 className="text-3xl text-center font-bold mb-4">Cookie Policy</h1>
       <p>
@@ -63,6 +64,7 @@ const CookiePolicy = () => {
       <h2 className="text-xl font-semibold mt-6">8. Updates to This Policy</h2>
       <p>We update this policy periodically. Last Updated: [Insert Date]</p>
 
+    </div>
       <Footer />
     </div>
   );

@@ -72,6 +72,7 @@ const Newsletter = () => {
   };
 
   return (
+    <div>
     <div className="max-padd-container p-6">
       {/* 📰 Blog Section */}
       <div className="mb-10">
@@ -161,6 +162,7 @@ const Newsletter = () => {
           *We respect your privacy. No spam, just quality updates.
         </p>
       </div>
+    </div>
       <Footer />
     </div>
   );

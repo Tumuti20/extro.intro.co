@@ -7,12 +7,17 @@ const JobsPage = () => {
     email: "",
     position: "",
     message: "",
+    cv: null,
   });
-  const [status, setStatus] = useState(""); // To show success/error messages
+  const [status, setStatus] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+  };
+
+  const handleFileChange = (e) => {
+    setFormData({ ...formData, cv: e.target.files[0] });
   };
 
   const handleSubmit = async (e) => {
@@ -25,8 +30,11 @@ const JobsPage = () => {
     formDataToSend.append("position", formData.position);
     formDataToSend.append("message", formData.message);
     formDataToSend.append("_subject", `Job Application for ${formData.position}`);
+    formDataToSend.append("_captcha", "false");
 
-    formDataToSend.append("_captcha", "false"); // Disable captcha
+    if (formData.cv) {
+      formDataToSend.append("attachment", formData.cv);
+    }
 
     try {
       const response = await fetch("https://formsubmit.co/samueltumuti20@gmail.com", {
@@ -35,8 +43,8 @@ const JobsPage = () => {
       });
 
       if (response.ok) {
-        setStatus("✅ Message submitted successfully!");
-        setFormData({ name: "", email: "", position: "", message: "" }); // Clear form
+        setStatus("✅ Application submitted successfully!");
+        setFormData({ name: "", email: "", position: "", message: "", cv: null });
       } else {
         setStatus("❌ Error sending application. Try again.");
       }
@@ -46,6 +54,7 @@ const JobsPage = () => {
   };
 
   return (
+    <div>
     <div className="max-padd-container text-black p-6">
       <h1 className="text-4xl text-center font-bold mb-6">
         Careers at Extrovert Introvert Clothing Company
@@ -57,73 +66,41 @@ const JobsPage = () => {
       <section className="mb-6">
         <h2 className="text-2xl font-semibold mb-4">Current Job Openings</h2>
         <ul className="list-disc ml-6">
-          <li>
-            <strong>Fashion Designer:</strong> Create new and innovative designs for our sustainable collections.
-          </li>
-          <li>
-            <strong>Marketing Specialist:</strong> Develop campaigns to promote our brand and engage with customers.
-          </li>
-          <li>
-            <strong>Supply Chain Manager:</strong> Oversee logistics and ensure ethical sourcing of materials.
-          </li>
+          <li><strong>Fashion Designer:</strong> Create new and innovative designs for our sustainable collections.</li>
+          <li><strong>Marketing Specialist:</strong> Develop campaigns to promote our brand and engage with customers.</li>
+          <li><strong>Supply Chain Manager:</strong> Oversee logistics and ensure ethical sourcing of materials.</li>
         </ul>
       </section>
 
       <section className="mb-6">
         <h2 className="text-2xl font-semibold mb-4">Apply for a Job</h2>
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4" encType="multipart/form-data">
           <div>
             <label className="block font-semibold">Full Name</label>
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              className="w-full p-2 border rounded"
-            />
+            <input type="text" name="name" value={formData.name} onChange={handleChange} required className="w-full p-2 border rounded" />
           </div>
 
           <div>
             <label className="block font-semibold">Email Address</label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              className="w-full p-2 border rounded"
-            />
+            <input type="email" name="email" value={formData.email} onChange={handleChange} required className="w-full p-2 border rounded" />
           </div>
 
           <div>
             <label className="block font-semibold">Position Applying For</label>
-            <input
-              type="text"
-              name="position"
-              value={formData.position}
-              onChange={handleChange}
-              required
-              className="w-full p-2 border rounded"
-            />
+            <input type="text" name="position" value={formData.position} onChange={handleChange} required className="w-full p-2 border rounded" />
           </div>
 
           <div>
             <label className="block font-semibold">Cover Letter / Message</label>
-            <textarea
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              rows="4"
-              required
-              className="w-full p-2 border rounded"
-            ></textarea>
+            <textarea name="message" value={formData.message} onChange={handleChange} rows="4" required className="w-full p-2 border rounded"></textarea>
           </div>
 
-          <button
-            type="submit"
-            className="bg-secondary text-white px-4 py-2 rounded hover:bg-secondary"
-          >
+          <div>
+            <label className="block font-semibold">Upload CV (PDF, DOCX)</label>
+            <input type="file" name="cv" accept=".pdf,.doc,.docx" onChange={handleFileChange} required className="w-full p-2 border rounded" />
+          </div>
+
+          <button type="submit" className="bg-secondary text-white px-4 py-2 rounded hover:bg-secondary">
             Submit Application
           </button>
         </form>
@@ -134,17 +111,11 @@ const JobsPage = () => {
       <section>
         <h2 className="text-2xl font-semibold mb-4">Contact Our HR Team</h2>
         <p>For any job-related inquiries, please reach out to our HR department:</p>
-        <p>
-          <strong>Email:</strong>{" "}
-          <a href="mailto:careers@extrovertintrovert.com" className="text-secondary">
-            careers@extrovertintrovert.com
-          </a>
-        </p>
-        <p>
-          <strong>Phone:</strong> +254 714 102 214
-        </p>
+        <p><strong>Email:</strong> <a href="mailto:careers@extrovertintrovert.com" className="text-secondary">careers@extrovertintrovert.com</a></p>
+        <p><strong>Phone:</strong> +254 714 102 214</p>
       </section>
 
+    </div>
       <Footer />
     </div>
   );

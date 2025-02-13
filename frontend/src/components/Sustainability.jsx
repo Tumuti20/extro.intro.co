@@ -3,6 +3,7 @@ import Footer from './Footer';
 
 const SustainabilityPage = () => {
   return (
+    <div>
     <div className="max-padd-container text-black p-6">
       <h1 className="text-4xl text-center font-bold mb-6">Sustainability at Extrovert Introvert Clothing Company</h1>
       <p className="mb-6">
@@ -67,7 +68,8 @@ const SustainabilityPage = () => {
         <p>By choosing Extrovert Introvert, you are supporting a movement towards a more sustainable and ethical fashion industry.</p>
         <p>Thank you for being part of our journey towards a better planet!</p>
       </section>
-      <Footer />
+    </div>
+    <Footer />
     </div>
   );
 };

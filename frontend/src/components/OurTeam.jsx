@@ -3,6 +3,7 @@ import Footer from './Footer';
 
 const TeamPage = () => {
   return (
+    <div>
     <div className=" max-padd-container text-black p-6">
       <h1 className="text-4xl text-center font-bold mb-6">Our Team at Extrovert Introvert Clothing Company</h1>
       <p className="mb-6">
@@ -60,6 +61,7 @@ const TeamPage = () => {
         </p>
         <p>Thank you for supporting Extrovert Introvert.</p>
       </section>
+    </div>
       <Footer />
     </div>
   );

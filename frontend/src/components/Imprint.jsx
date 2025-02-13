@@ -3,6 +3,7 @@ import Footer from './Footer';
 
 const Imprint = () => {
     return (
+        <div>
         <div className="max-padd-container text-black font-sans p-6">
             <h1 className="text-3xl text-center font-bold">Imprint - Extro.Intro</h1>
             
@@ -53,6 +54,7 @@ const Imprint = () => {
             
             <p className="mt-6">For legal inquiries, business collaborations, or any other concerns, please reach out via the provided contact details.</p>
 
+        </div>
             <Footer />
         </div>
     );

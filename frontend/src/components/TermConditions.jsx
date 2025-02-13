@@ -3,6 +3,7 @@ import Footer from "./Footer";
 
 const TermsConditions = () => {
   return (
+    <div>
     <div className="max-padd-container mx-auto p-6">
       <h1 className="text-3xl text-center font-bold mb-4">Terms & Conditions</h1>
       <p>Last Updated:Today</p>
@@ -71,6 +72,7 @@ const TermsConditions = () => {
         <li><strong>Address:</strong> Extrovert Introvert HQ, Nairobi, Kenya</li>
       </ul>
 
+    </div>
       <Footer />
     </div>
   );

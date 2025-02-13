@@ -3,6 +3,7 @@ import Footer from "./Footer";
 
 const PrivacyPolicy = () => {
   return (
+    <div>
     <div className="max-padd-container mx-auto p-6">
       <h1 className="text-3xl text-center font-bold mb-4">Extrovert Introvert Privacy Policy</h1>
 
@@ -118,6 +119,7 @@ const PrivacyPolicy = () => {
         Your trust is important to us, and we are dedicated to keeping your information secure.
       </p>
 
+    </div>
       <Footer />
     </div>
   );
