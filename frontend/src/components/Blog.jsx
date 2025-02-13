@@ -1,6 +1,7 @@
 import React from "react";
 import Title from "./Title";
 import { blogs } from "../assets/data";
+import { Link } from "react-router-dom";
 
 const Blog = () => {
   return (
@@ -31,9 +32,11 @@ const Blog = () => {
                 {blog.title}
               </h3>
               <h4 className="medium-14 pb-3 pt-1">{blog.category}</h4>
-              <button className="btn-light !px-3 !p-0 ">
-                continue reading
-              </button>
+              <Link to="/continue">
+                <button className="btn-light !px-3 !p-0">
+                  Continue Reading
+                </button>
+              </Link>
             </div>
           </div>
         ))}

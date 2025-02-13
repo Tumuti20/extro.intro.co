@@ -27,6 +27,7 @@ import Sustainability from './components/Sustainability'
 import Press from './components/Press'
 import Jobs from './components/Jobs'
 import NewsLetter from './components/NewsLetter'
+import Continue from './components/Continue'
 
 const App = () => {
   return (
@@ -58,6 +59,7 @@ const App = () => {
         <Route path="/press" element={<Press />} />
         <Route path="/jobs" element={<Jobs />} />
         <Route path="/newsletter" element={<NewsLetter />} />
+        <Route path="/continue" element={<Continue />} />
       </Routes>
     </main>
   )
