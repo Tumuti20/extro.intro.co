@@ -18,7 +18,7 @@ const JobsPage = () => {
     e.preventDefault();
 
     // Construct mailto link
-    const email = "samueltumutii20@gmail.com";
+    const email = "samueltumuti20@gmail.com";
     const subject = encodeURIComponent(`Job Application for ${formData.position}`);
     const body = encodeURIComponent(
       `Name: ${formData.name}\nEmail: ${formData.email}\nPosition: ${formData.position}\n\nMessage:\n${formData.message}`
@@ -104,7 +104,7 @@ const JobsPage = () => {
 
           <button
             type="submit"
-            className="bg-secondary text-white px-4 py-2 rounded hover:bg-blue-700"
+            className="bg-secondary text-white px-4 py-2 rounded hover:bg-secondary"
           >
             Submit Application
           </button>
@@ -116,7 +116,7 @@ const JobsPage = () => {
         <p>For any job-related inquiries, please reach out to our HR department:</p>
         <p>
           <strong>Email:</strong>{" "}
-          <a href="mailto:careers@extrovertintrovert.com" className="text-blue-500">
+          <a href="mailto:careers@extrovertintrovert.com" className="text-secondary">
             careers@extrovertintrovert.com
           </a>
         </p>

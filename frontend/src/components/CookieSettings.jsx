@@ -24,13 +24,13 @@ const CookiePolicy = () => {
 
       <h2 className="text-xl font-semibold mt-6">3. Third-Party Cookies</h2>
       <h3 className="text-lg font-semibold mt-4">Google Analytics</h3>
-      <p>Tracks site usage to improve performance. <a href="https://tools.google.com/dlpage/gaoptout" className="text-blue-500">Opt-out here</a>.</p>
+      <p>Tracks site usage to improve performance. <a href="https://tools.google.com/dlpage/gaoptout" className="text-secondary">Opt-out here</a>.</p>
 
       <h3 className="text-lg font-semibold mt-4">Facebook Pixel</h3>
-      <p>Enhances ad targeting on Facebook and Instagram. <a href="https://www.facebook.com/settings?tab=ads" className="text-blue-500">Manage ad settings</a>.</p>
+      <p>Enhances ad targeting on Facebook and Instagram. <a href="https://www.facebook.com/settings?tab=ads" className="text-secondary">Manage ad settings</a>.</p>
 
       <h3 className="text-lg font-semibold mt-4">YouTube Cookies</h3>
-      <p>Stores video preferences and engagement metrics. <a href="https://myaccount.google.com/data-and-personalization" className="text-blue-500">Manage Google settings</a>.</p>
+      <p>Stores video preferences and engagement metrics. <a href="https://myaccount.google.com/data-and-personalization" className="text-secondary">Manage Google settings</a>.</p>
 
       <h2 className="text-xl font-semibold mt-6">4. Managing Cookies</h2>
       <p>

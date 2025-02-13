@@ -51,7 +51,7 @@ const CancellationPolicy = () => {
             <h2 className="text-2xl font-semibold mt-4">6. How to Request a Cancellation</h2>
             <p>To request a cancellation, customers should:</p>
             <ol className="list-decimal pl-6">
-                <li>Email us at <a href="mailto:support@extrointro.com" className="text-blue-500">support@extrointro.com</a> with their <strong>order number</strong> and reason for cancellation.</li>
+                <li>Email us at <a href="mailto:support@extrointro.com" className="text-secondary">support@extrointro.com</a> with their <strong>order number</strong> and reason for cancellation.</li>
                 <li>Call our customer service hotline at <strong>+254 14 1022 14</strong>.</li>
                 <li>Use the cancellation request form on our website.</li>
             </ol>

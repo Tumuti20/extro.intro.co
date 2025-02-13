@@ -16,9 +16,9 @@ const Imprint = () => {
             <p><strong>Business Purpose:</strong> Designing and selling high-quality fashion items.</p>
             
             <h2 className="text-2xl font-semibold mt-4">2. Contact Information</h2>
-            <p><strong>Email:</strong> <a href="mailto:contact@extrointro.com" className="text-blue-500">contact@extrointro.com</a></p>
+            <p><strong>Email:</strong> <a href="mailto:contact@extrointro.com" className="text-secondary">contact@extrointro.com</a></p>
             <p><strong>Phone:</strong> +123 456 7890</p>
-            <p><strong>Website:</strong> <a href="https://extrointro.vercel.app" className="text-blue-500">https://extrointro.vercel.app</a></p>
+            <p><strong>Website:</strong> <a href="https://extrointro.vercel.app" className="text-secondary">https://extrointro.vercel.app</a></p>
             <p><strong>Customer Support Hours:</strong> Monday - Friday, 9 AM - 5 PM</p>
             
             <h2 className="text-2xl font-semibold mt-4">3. Responsible Person</h2>
