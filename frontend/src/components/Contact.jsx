@@ -43,7 +43,7 @@ const ContactInfo = () => {
           <p>Email: <a href="mailto:wholesale@extrointro.com" className="text-black">wholesale@extrointro.com</a></p>
           <p>
             For influencer collaborations and partnerships, reach out to our marketing team at
-            <a href="mailto:collabs@extrointro.com" className="text-black"> collabs@extrointro.com</a>
+            <a href="mailto:collabs@extrointro.com" className="text-secondary"> collabs@extrointro.com</a>
           </p>
         </div>
 
@@ -53,13 +53,13 @@ const ContactInfo = () => {
           <p>Stay updated with our latest collections, promotions, and announcements by following us:</p>
           <ul className="list-disc ml-6">
             <li>
-              Instagram: <a href="https://instagram.com/extrointro" className="text-black">@extrointro</a>
+              Instagram: <a href="https://instagram.com/extrointro" className="text-secondary">@extrointro</a>
             </li>
             <li>
-              Facebook: <a href="https://facebook.com/extrointro" className="text-black">@extrointro</a>
+              Facebook: <a href="https://facebook.com/extrointro" className="text-secondary">@extrointro</a>
             </li>
             <li>
-              Twitter: <a href="https://twitter.com/extrointro" className="text-black">@extrointro</a>
+              Twitter: <a href="https://twitter.com/extrointro" className="text-secondary">@extrointro</a>
             </li>
           </ul>
         </div>
@@ -69,7 +69,7 @@ const ContactInfo = () => {
           <h2 className="text-2xl font-semibold mb-3">Frequently Asked Questions</h2>
           <p>Before reaching out, check our FAQ section for common questions about orders, shipping, and returns.</p>
           <p>
-            Visit: <a href="/faq" className="text-black">www.extrointro.com/faq</a>
+            Visit: <a href="/faq" className="text-secondary">www.extrointro.com/faq</a>
           </p>
         </div>
       </div>
