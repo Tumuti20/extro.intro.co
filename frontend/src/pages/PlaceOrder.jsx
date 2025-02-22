@@ -28,7 +28,7 @@ const PlaceOrder = () => {
     country: "",
     zipcode: "",
     county: "",
-    phone: "",
+    phoneNumber: "",
   });
 
   const onChangeHandler = (e) => {
@@ -63,14 +63,14 @@ const PlaceOrder = () => {
       };
 
       switch (method) {
-        // api calls for COD
+        // api calls for payment methods
         case "cod":
+        case "pesapal":
           const response = await axios.post(
             backendUrl + "/api/order/place",
             orderData,
             { headers: { token } }
           );
-          // console.log(response)
           if (response.data.success) {
             setCartItems({});
             navigate("/orders");
@@ -78,19 +78,8 @@ const PlaceOrder = () => {
             toast.error(response.data.message);
           }
           break;
-        //api calls for pesapal
-        case "pesapal":
-          const pesapalPaymentLink =
-            "https://store.pesapal.com/extrointro"; // Replace with your actual PesaPal link
 
-          if (pesapalPaymentLink) {
-            window.location.replace(pesapalPaymentLink);
-          } else {
-            toast.error("PesaPal payment link is missing.");
-          }
-          break;
-
-        // api calls for stripe
+        // api calls for stripe and M-Pesa
         case "stripe":
           const responseStripe = await axios.post(
             backendUrl + "/api/order/stripe",
@@ -104,7 +93,8 @@ const PlaceOrder = () => {
             toast.error(responseStripe.data.message);
           }
           break;
-        default:
+        case "mpesa":
+          // Add M-Pesa API call logic here
           break;
       }
     } catch (error) {
@@ -225,7 +215,22 @@ const PlaceOrder = () => {
                   {/* <img src={googlepay} alt="Google Pay" className="w-20 h-20 object-contain" /> */}
                   {/* </div> */}
                   <div
-                    onClick={() => setMethod("pesapal")}
+                    onClick={() => {
+                      setMethod("pesapal");
+
+                      const paymentWindow = window.open(
+                        "https://store.pesapal.com/embed-code?pageUrl=https://store.pesapal.com/extrointro",
+                        "_blank"
+                      );
+
+                      // Check every 5 seconds if the user has completed payment
+                      const checkPaymentStatus = setInterval(() => {
+                        if (paymentWindow?.closed) {
+                          clearInterval(checkPaymentStatus);
+                          navigate("/orders"); // Redirect user to Orders page
+                        }
+                      }, 1000);
+                    }}
                     className={`${
                       method === "pesapal" ? "btn-dark" : "btn-white"
                     } !py-1 text-xs cursor-pointer flex items-center justify-center w-30 h-20`}
@@ -233,9 +238,10 @@ const PlaceOrder = () => {
                     <img
                       src={mpesa}
                       alt=""
-                      className="w-20 h-20 object-contain "
+                      className="w-20 h-20 object-contain"
                     />
                   </div>
+
                   <div
                     onClick={() => setMethod("cod")}
                     className={`${
@@ -255,7 +261,6 @@ const PlaceOrder = () => {
           </div>
         </form>
       </div>
-
       <Footer />
     </div>
   );
