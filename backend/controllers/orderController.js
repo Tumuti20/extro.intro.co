@@ -1,7 +1,10 @@
 import orderModel from "../models/orderModel.js"
 import userModel from "../models/userModel.js"
 import Stripe from "stripe"
+import axios from "axios"
+import dotenv from "dotenv"
 
+dotenv.config()
 
 // global variables for payments
 const currency = "kes"
@@ -9,7 +12,11 @@ const currency = "kes"
 //STRIPE GATEWAY INITIALIZATION
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
 
-//mpesa gateway initialization
+//pesapal credentials
+const PESAPAL_CONSUMER_KEY = process.env.PESAPAL_CONSUMER_KEY;
+const PESAPAL_CONSUMER_SECRET = process.env.PESAPAL_CONSUMER_SECRET;
+const PESAPAL_API_URL = "https://cybqa.pesapal.com/pesapalv3/api/PostPesapalDirectOrderV4";
+const PESAPAL_VERIFY_URL = "https://cybqa.pesapal.com/pesapalv3/api/CheckTransactionStatus";
 
 
 //controller function for placing orders using cod method
@@ -37,7 +44,95 @@ try {
     res.json({ success: false, message: error.message})
 }
 }
-// controller function for placing orders using mpesa method
+// controller function for placing orders using pesapal
+const placeOrderPesaPal = async (req, res) => {
+    try {
+      const { userId, items, amount, address, email, phone } = req.body;
+      const orderData = {
+        userId,
+        items,
+        amount,
+        address,
+        paymentMethod: "PesaPal",
+        payment: false,
+        date: Date.now(),
+      };
+  
+      // Save order to database first
+      const newOrder = new orderModel(orderData);
+      await newOrder.save();
+
+       // Get PesaPal token
+       const getPesaPalToken = async () => {
+        try {
+            const response = await axios.post("https://cybqa.pesapal.com/pesapalv3/api/Auth/RequestToken", {
+                consumer_key: PESAPAL_CONSUMER_KEY,
+                consumer_secret: PESAPAL_CONSUMER_SECRET
+            });
+    
+            return response.data.token; // Return the token
+        } catch (error) {
+            console.error("🔴 Error getting PesaPal Token:", error.response?.data || error.message);
+            return null;
+        }
+    };
+    
+    
+
+  
+      const orderDetails = {
+        Amount: amount,
+        Description: "Order Payment",
+        Type: "MERCHANT",
+        Reference: newOrder._id, // Using MongoDB order ID as reference
+        FirstName: "Customer",
+        LastName: "User",
+        Email: email,
+        PhoneNumber: phone,
+        Currency: "KES",
+        CallbackUrl: `https://extrointro.vercel.appm/verify?orderId=${newOrder._id}`, // Redirect URL after payment
+      };
+          // Request PesaPal payment link
+    const response = await axios.post(PESAPAL_API_URL, orderDetails, {
+        headers: {
+          Authorization: `Bearer ${PESAPAL_CONSUMER_KEY}:${PESAPAL_CONSUMER_SECRET}`,
+          "Content-Type": "application/json",
+        },
+      });
+  
+      res.json({ success: true, paymentLink: response.data.redirect_url });
+    } catch (error) {
+      console.log("Error placing PesaPal order:", error);
+      res.json({ success: false, message: "Failed to initiate payment" });
+    }
+  };
+  
+  // Controller function for verifying PesaPal payment
+  const verifyPesaPalPayment = async (req, res) => {
+    try {
+      const { orderId } = req.body;
+      const verifyUrl = `${PESAPAL_VERIFY_URL}?orderTrackingId=${orderId}`;
+  
+      const response = await axios.get(verifyUrl, {
+        headers: {
+          Authorization: `Bearer ${PESAPAL_CONSUMER_KEY}:${PESAPAL_CONSUMER_SECRET}`,
+        },
+      });
+  
+      const status = response.data.status;
+  
+      if (status === "COMPLETED") {
+        await orderModel.findByIdAndUpdate(orderId, { payment: true });
+        res.json({ success: true, message: "Payment Verified" });
+      } else {
+        res.json({ success: false, message: "Payment Not Completed" });
+      }
+    } catch (error) {
+      console.log("Error verifying PesaPal payment:", error);
+      res.json({ success: false, message: "Failed to verify payment" });
+    }
+  };
+  
 
 //controller function for placing orders using stripe method
 const placeOrderStripe = async (req,res)=>{
@@ -114,7 +209,6 @@ try {
     res.json({ success: false, message: error.message})
 }
 }
-
 //controller function for verify stripe (tempo method)
 const verifyStripe = async (req,res)=>{
     const {orderId, success, userId} = req.body
@@ -133,4 +227,4 @@ const verifyStripe = async (req,res)=>{
     }
 }
 
-export {placeOrder, placeOrderStripe, allOrders, userOrders, updateStatus, verifyStripe}
+export { placeOrder, placeOrderStripe, placeOrderPesaPal, allOrders, userOrders, updateStatus, verifyStripe, verifyPesaPalPayment, };

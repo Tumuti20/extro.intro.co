@@ -4,12 +4,19 @@ import CartTotal from "../components/CartTotal";
 import Footer from "../components/Footer";
 import { ShopContext } from "../context/ShopContext";
 import axios from "axios";
-import mpesa from "../assets/mpesa.png"
+import mpesa from "../assets/mpesa.png";
 // import googlepay from "../assets/googlepay.png"
 
 const PlaceOrder = () => {
-  const { navigate, token, cartItems, setCartItems, getCartAmount, products, backendUrl } =
-    useContext(ShopContext);
+  const {
+    navigate,
+    token,
+    cartItems,
+    setCartItems,
+    getCartAmount,
+    products,
+    backendUrl,
+  } = useContext(ShopContext);
   const [method, setMethod] = useState("cod");
 
   const [formData, setFormData] = useState({
@@ -32,17 +39,19 @@ const PlaceOrder = () => {
   };
 
   const onSubmitHandler = async (e) => {
-     e.preventDefault()
-     try {
-      let orderItems = []
-      for(const items in cartItems){
-        for(const item in cartItems[items]){
-          if(cartItems[items][item] > 0){
-            const itemInfo = structuredClone(products.find(product =>product._id === items))
-            if(itemInfo){
-              itemInfo.size = item
-              itemInfo.quantity = cartItems[items][item]
-              orderItems.push(itemInfo)
+    e.preventDefault();
+    try {
+      let orderItems = [];
+      for (const items in cartItems) {
+        for (const item in cartItems[items]) {
+          if (cartItems[items][item] > 0) {
+            const itemInfo = structuredClone(
+              products.find((product) => product._id === items)
+            );
+            if (itemInfo) {
+              itemInfo.size = item;
+              itemInfo.quantity = cartItems[items][item];
+              orderItems.push(itemInfo);
             }
           }
         }
@@ -50,41 +59,61 @@ const PlaceOrder = () => {
       let orderData = {
         address: formData,
         items: orderItems,
-        amount: getCartAmount()
+        amount: getCartAmount(),
+      };
+
+      switch (method) {
+        // api calls for COD
+        case "cod":
+          const response = await axios.post(
+            backendUrl + "/api/order/place",
+            orderData,
+            { headers: { token } }
+          );
+          // console.log(response)
+          if (response.data.success) {
+            setCartItems({});
+            navigate("/orders");
+          } else {
+            toast.error(response.data.message);
+          }
+          break;
+        //api calls for pesapal
+        case "pesapal":
+          const pesapalPaymentLink =
+            "https://store.pesapal.com/extrointro"; // Replace with your actual PesaPal link
+
+          if (pesapalPaymentLink) {
+            window.location.replace(pesapalPaymentLink);
+          } else {
+            toast.error("PesaPal payment link is missing.");
+          }
+          break;
+
+        // api calls for stripe
+        case "stripe":
+          const responseStripe = await axios.post(
+            backendUrl + "/api/order/stripe",
+            orderData,
+            { headers: { token } }
+          );
+          if (responseStripe.data.success) {
+            const { session_url } = responseStripe.data;
+            window.location.replace(session_url);
+          } else {
+            toast.error(responseStripe.data.message);
+          }
+          break;
+        default:
+          break;
       }
-
-         switch (method){
-          // api calls for COD
-          case 'cod':
-                const response = await axios.post(backendUrl + '/api/order/place',orderData, {headers:{token}})
-                // console.log(response)
-                if(response.data.success){
-                  setCartItems({})
-                  navigate('/orders')
-                }else{
-                  toast.error(response.data.message)
-                }
-            break;
-            // api calls for stripe
-            case 'stripe':
-              const responseStripe = await axios.post(backendUrl + '/api/order/stripe',orderData, {headers:{token}})
-              if(responseStripe.data.success){
-                const {session_url} = responseStripe.data
-                window.location.replace(session_url)
-              }else{
-                toast.error(responseStripe.data.message)
-              }
-              break;
-            default:
-              break
-         }
-     } catch (error) {
-      console.log(error)
-      toast.error(error.message)
-     }
-
-          // api calls for M-pesa
+    } catch (error) {
+      console.log(error);
+      toast.error(error.message);
     }
+
+    // api calls for M-pesa
+  };
   return (
     <div>
       <div className="bg-primary mb-16">
@@ -188,20 +217,24 @@ const PlaceOrder = () => {
                 </h3>
                 <div className="flex gap-3">
                   {/* <div */}
-                    {/* onClick={() => setMethod("googlepay")} */}
-                    {/* className={`${ */}
-                      {/* method === "googlepay" ? "btn-dark" : "btn-white" */}
-                    {/* // } !py-1 text-xs cursor-pointer flex items-center justify-center w-30 h-20`} */}
+                  {/* onClick={() => setMethod("googlepay")} */}
+                  {/* className={`${ */}
+                  {/* method === "googlepay" ? "btn-dark" : "btn-white" */}
+                  {/* // } !py-1 text-xs cursor-pointer flex items-center justify-center w-30 h-20`} */}
                   {/* > */}
-                     {/* <img src={googlepay} alt="Google Pay" className="w-20 h-20 object-contain" /> */}
+                  {/* <img src={googlepay} alt="Google Pay" className="w-20 h-20 object-contain" /> */}
                   {/* </div> */}
                   <div
-                    onClick={() => setMethod("mpesa")}
+                    onClick={() => setMethod("pesapal")}
                     className={`${
-                      method === "mpesa" ? "btn-dark" : "btn-white"
+                      method === "pesapal" ? "btn-dark" : "btn-white"
                     } !py-1 text-xs cursor-pointer flex items-center justify-center w-30 h-20`}
                   >
-                  <img src={mpesa} alt="" className="w-20 h-20 object-contain " />
+                    <img
+                      src={mpesa}
+                      alt=""
+                      className="w-20 h-20 object-contain "
+                    />
                   </div>
                   <div
                     onClick={() => setMethod("cod")}
