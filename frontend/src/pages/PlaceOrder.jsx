@@ -205,6 +205,7 @@ const PlaceOrder = () => {
                 <h3 className="bold-20 mb-5">
                   Payment <span className="text-secondary"> Method </span>
                 </h3>
+                  <h3 className="bold-20 mb-5">make sure to pay first then <span className="text-secondary"> PlaceOrder when using m-pesa </span></h3>
                 <div className="flex gap-3">
                   {/* <div */}
                   {/* onClick={() => setMethod("googlepay")} */}
