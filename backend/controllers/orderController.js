@@ -39,7 +39,7 @@ const placeOrder = async (req, res) => {
       items,
       amount,
       address,
-      paymentMethod: "pesapal",
+      paymentMethod: "M-Pesa",
       payment: false,
       date: Date.now(),
     };

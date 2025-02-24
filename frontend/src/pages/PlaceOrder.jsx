@@ -17,7 +17,7 @@ const PlaceOrder = () => {
     products,
     backendUrl,
   } = useContext(ShopContext);
-  const [method, setMethod] = useState("cod");
+  const [method, setMethod] = useState("cod,pesapal");
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -65,7 +65,7 @@ const PlaceOrder = () => {
       switch (method) {
         // api calls for payment methods
         case "cod":
-        case "pesapal":
+        case "mpesa":
           const response = await axios.post(
             backendUrl + "/api/order/place",
             orderData,
@@ -93,7 +93,7 @@ const PlaceOrder = () => {
             toast.error(responseStripe.data.message);
           }
           break;
-        case "mpesa":
+        
           // Add M-Pesa API call logic here
           break;
       }
@@ -217,7 +217,7 @@ const PlaceOrder = () => {
                   {/* </div> */}
                   <div
                     onClick={() => {
-                      setMethod("pesapal");
+                      setMethod("mpesa");
 
                       const paymentWindow = window.open(
                         "https://store.pesapal.com/embed-code?pageUrl=https://store.pesapal.com/extrointro",
@@ -233,7 +233,7 @@ const PlaceOrder = () => {
                       }, 1000);
                     }}
                     className={`${
-                      method === "pesapal" ? "btn-dark" : "btn-white"
+                      method === "mpesa" ? "btn-dark" : "btn-white"
                     } !py-1 text-xs cursor-pointer flex items-center justify-center w-30 h-20`}
                   >
                     <img
