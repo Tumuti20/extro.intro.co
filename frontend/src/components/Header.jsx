@@ -40,7 +40,7 @@ const Header = () => {
           {/* menu toggle  */}
           <FaBarsStaggered onClick={toggleMenu} className="xl:hidden cursor-pointer text-xl"/>
           {/* search icon  */}
-          <FaSearch className="text-lg cursor-pointer"/>
+          {/* <FaSearch className="text-lg cursor-pointer"/> */}
           {/* cart  */}
           <Link to={'/cart'} className="flex relative">
           <TbBasket  className="text-[27px]"/>

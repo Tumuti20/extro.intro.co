@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react'
-import Title from "./Title"
+import React, { useContext, useEffect, useState } from 'react';
+import Title from "./Title";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
@@ -7,23 +7,22 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 // import required modules
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import Item from './Item';
 import { ShopContext } from '../context/ShopContext';
 
 const NewArrivals = () => {
+  const { products } = useContext(ShopContext);
+  const [newArrivals, setNewArrivals] = useState([]);
 
-  const {products} = useContext(ShopContext)
-  const [newArrivals, setNewArrivals] = useState([])
-
-  useEffect(()=> {
-    const data = products.slice(0, 10)
-    setNewArrivals(data)
-  }, [products])
+  useEffect(() => {
+    const data = products.slice(0, 10);
+    setNewArrivals(data);
+  }, [products]);
 
   return (
     <section className="max-padd-container pt-16 pb-6 bg-primary">
-      <Title title1={'New'} title2={'Arrivals'} titleStyles={'pb-10'} paraStyles={'!block'}/>
+      <Title title1={'New'} title2={'Arrivals'} titleStyles={'pb-10'} paraStyles={'!block'} />
       {/* swiper container  */}
       <Swiper
         autoplay={{
@@ -34,19 +33,19 @@ const NewArrivals = () => {
           clickable: true,
         }}
         breakpoints={{
-          400:{
+          400: {
             slidesPerView: 2,
             spaceBetween: 30
           },
-          700:{
+          700: {
             slidesPerView: 3,
             spaceBetween: 30
           },
-          1024:{
+          1024: {
             slidesPerView: 4,
             spaceBetween: 30
           },
-          1200:{
+          1200: {
             slidesPerView: 5,
             spaceBetween: 30
           },
@@ -54,14 +53,19 @@ const NewArrivals = () => {
         modules={[Autoplay, Pagination]}
         className="h-[555px] sm:h-[411px] md:h-[488px]"
       >
-        {newArrivals.map((product)=>(
+        {newArrivals.map((product) => (
           <SwiperSlide key={product._id}>
-            <Item product={product}/>
+            <div
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="cursor-pointer"
+            >
+              <Item product={product} />
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>
     </section>
-  )
-}
+  );
+};
 
-export default NewArrivals
+export default NewArrivals;
