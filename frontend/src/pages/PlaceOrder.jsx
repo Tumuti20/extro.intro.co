@@ -1,15 +1,15 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Title from "../components/Title";
 import CartTotal from "../components/CartTotal";
 import Footer from "../components/Footer";
 import { ShopContext } from "../context/ShopContext";
 import axios from "axios";
 import mpesa from "../assets/mpesa.png";
-// import googlepay from "../assets/googlepay.png"
+import toast from "react-hot-toast";
 
 const PlaceOrder = () => {
   const {
-    navigate,
     token,
     cartItems,
     setCartItems,
@@ -17,7 +17,8 @@ const PlaceOrder = () => {
     products,
     backendUrl,
   } = useContext(ShopContext);
-  const [method, setMethod] = useState("cod,pesapal");
+  const navigate = useNavigate();
+  const [method, setMethod] = useState("cod"); // Default method: Cash on Delivery
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -31,10 +32,16 @@ const PlaceOrder = () => {
     phoneNumber: "",
   });
 
-  const onChangeHandler = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
+  useEffect(() => {
+    // Redirect to login if user is not authenticated
+    if (!token) {
+      toast.error("You must log in to place an order!");
+      navigate("/login");
+    }
+  }, [token, navigate]);
 
+  const onChangeHandler = (e) => {
+    const { name, value } = e.target;
     setFormData((data) => ({ ...data, [name]: value }));
   };
 
@@ -56,6 +63,7 @@ const PlaceOrder = () => {
           }
         }
       }
+
       let orderData = {
         address: formData,
         items: orderItems,
@@ -63,11 +71,10 @@ const PlaceOrder = () => {
       };
 
       switch (method) {
-        // api calls for payment methods
         case "cod":
         case "mpesa":
           const response = await axios.post(
-            backendUrl + "/api/order/place",
+            `${backendUrl}/api/order/place`,
             orderData,
             { headers: { token } }
           );
@@ -79,10 +86,9 @@ const PlaceOrder = () => {
           }
           break;
 
-        // api calls for stripe and M-Pesa
         case "stripe":
           const responseStripe = await axios.post(
-            backendUrl + "/api/order/stripe",
+            `${backendUrl}/api/order/stripe`,
             orderData,
             { headers: { token } }
           );
@@ -93,16 +99,11 @@ const PlaceOrder = () => {
             toast.error(responseStripe.data.message);
           }
           break;
-        
-          // Add M-Pesa API call logic here
-          break;
       }
     } catch (error) {
       console.log(error);
       toast.error(error.message);
     }
-
-    // api calls for M-pesa
   };
   return (
     <div>
