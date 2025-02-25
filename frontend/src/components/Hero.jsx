@@ -19,7 +19,12 @@ const Hero = () => {
           />
           <span className="absolute top-1/2 left-1/2 flexCenter -translate-x-1/2 -translate-y-1/2 h-8 w-8 bg-secondary rounded-full cursor-pointer">
             <span className="absolute h-full w-full rounded-full bg-white opacity-50 animate-ping"></span>
-            <Link to={{pathname:"/collection"}}><FaPlay className="text-sm relative left-[1px] text-white" /></Link>
+            <Link
+              to="/collection"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            >
+              <FaPlay className="text-sm relative left-[1px] text-white" />
+            </Link>
           </span>
         </div>
         <p className="">
@@ -36,11 +41,15 @@ const Hero = () => {
           transform your style!
         </h1>
         <div className="flex">
-          <Link to={{pathname:"/collection"}} className="bg-white text-xs font-medium capitalize pl-5 rounded-full flexCenter gap-x-2 group">
+          <Link
+            to="/collection"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="bg-white text-xs font-medium capitalize pl-5 rounded-full flexCenter gap-x-2 group"
+          >
             Check Our Contemporary Collection
             <FaArrowRight
               className="bg-secondary text-white rounded-full h-11 w-11 p-3 m-[3px] border border-white 
-               group-hover:-rotate-[45deg] transition-all duration-500"
+    group-hover:-rotate-[45deg] transition-all duration-500"
             />
           </Link>
         </div>

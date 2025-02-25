@@ -13,14 +13,14 @@ const Banner = () => {
           <h3 className="h4 uppercase">Revamp your closet today.</h3>
           <div className="flex mt-5">
             <Link
-              to={"/collection"}
-              className="btn-secondary !py-0 !pr-0 rounded-full flexCenter gap-x-2
-             group"
+              to="/collection"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              className="btn-secondary !py-0 !pr-0 rounded-full flexCenter gap-x-2 group"
             >
               Curate yours.
               <FaArrowRight
-                className="bg-white text-tertiary
-            rounded-full h-9 w-9 p-3 m-[3px] group-hover:-rotate-[45deg] transition-all duration-500"
+                className="bg-white text-tertiary rounded-full h-9 w-9 p-3 m-[3px] 
+    group-hover:-rotate-[45deg] transition-all duration-500"
               />
             </Link>
           </div>

@@ -32,15 +32,14 @@ const Header = () => {
 
           {/* navbar  */}
           <div className="flex-1">
-          <Navbar
-  containerStyles={`transition-all duration-300 ${
-    menuOpened || window.innerWidth >= 1280 // Keep menu visible on large screens
-      ? "opacity-100 scale-100 flex items-start flex-col xl:flex-row gap-y-8 xl:gap-x-10 fixed xl:relative top-16 right-6 xl:top-auto xl:right-auto p-5 xl:p-1 bg-white rounded-xl xl:rounded-full  w-52 xl:w-auto ring-1 ring-slate-900/5 z-50"
-      : "opacity-100 scale-95 hidden"
-  }`}
-  closeMenu={toggleMenu}
-/>
-
+            <Navbar
+              containerStyles={`transition-all duration-300 ${
+                menuOpened || window.innerWidth >= 1280 // Keep menu visible on large screens
+                  ? "opacity-100 scale-100 flex items-start flex-col xl:flex-row gap-y-8 xl:gap-x-10 fixed xl:relative top-16 right-6 xl:top-auto xl:right-auto p-5 xl:p-1 bg-white rounded-xl xl:rounded-full  w-52 xl:w-auto ring-1 ring-slate-900/5 z-50"
+                  : "opacity-100 scale-95 hidden"
+              }`}
+              closeMenu={toggleMenu}
+            />
           </div>
 
           {/* buttons right side  */}

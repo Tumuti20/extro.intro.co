@@ -32,7 +32,10 @@ const Blog = () => {
                 {blog.title}
               </h3>
               <h4 className="medium-14 pb-3 pt-1">{blog.category}</h4>
-              <Link to="/continue">
+              <Link
+                to="/continue"
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              >
                 <button className="btn-light !px-3 !p-0">
                   Continue Reading
                 </button>
