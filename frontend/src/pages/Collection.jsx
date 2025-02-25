@@ -129,7 +129,7 @@ const Collection = () => {
 
         {/* Product Grid */}
         <div className="bg-primary p-4 rounded-l-xl w-full">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4">
             {getPaginatedProducts().length > 0 ? (
               getPaginatedProducts().map((product) => (
                 <div
