@@ -129,7 +129,7 @@ const Collection = () => {
 
         {/* Product Grid */}
         <div className="bg-primary p-4 rounded-l-xl w-full">
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4">
             {getPaginatedProducts().length > 0 ? (
               getPaginatedProducts().map((product) => (
                 <div
@@ -155,12 +155,16 @@ const Collection = () => {
             <button
               disabled={currentPage === 1}
               onClick={() => {
-                setCurrentPage((prev) => prev - 1);
-                window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll to top
+                if (currentPage > 1) {
+                  setCurrentPage((prev) => prev - 1);
+                  setTimeout(() => {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }, 100); // Small delay to ensure page state updates before scrolling
+                }
               }}
-              className={`${
-                currentPage === 1 && "opacity-50 cursor-not-allowed"
-              } btn-secondary !py-1 !px-3`}
+              className={`btn-secondary !py-1 !px-3 ${
+                currentPage === 1 ? "opacity-50 cursor-not-allowed" : ""
+              }`}
             >
               Previous
             </button>
@@ -183,12 +187,18 @@ const Collection = () => {
             <button
               disabled={currentPage === totalPages}
               onClick={() => {
-                setCurrentPage((prev) => prev + 1);
-                window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll to top
+                if (currentPage < totalPages) {
+                  setCurrentPage((prev) => prev + 1);
+                  setTimeout(() => {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }, 100); // Ensures page update before scrolling
+                }
               }}
-              className={`${
-                currentPage === totalPages && "opacity-50 cursor-not-allowed"
-              } btn-secondary !py-1 !px-3`}
+              className={`btn-secondary !py-1 !px-3 ${
+                currentPage === totalPages
+                  ? "opacity-50 cursor-not-allowed"
+                  : ""
+              }`}
             >
               Next
             </button>

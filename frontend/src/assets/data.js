@@ -56,6 +56,25 @@ import img49 from './product_49.png'
 import img50 from './product_50.png'
 import img51 from './product_51.jpg'
 import img52 from './product_52.png'
+import img53 from './product_53.png'
+import img54 from './product_54.png'
+import img55 from './product_55.png'
+import img56 from './product_56.png'
+import img57 from './product_57.png'
+import img58 from './product_58.png'
+import img59 from './product_59.png'
+import img60 from './product_60.png'
+import img61 from './product_61.png'
+import img62 from './product_62.png'
+import img63 from './product_63.png'
+import img64 from './product_64.png'
+import img65 from './product_65.png'
+import img66 from './product_66.png'
+import img67 from './product_67.png'
+import img68 from './product_68.png'
+import img69 from './product_69.png'
+import img70 from './product_70.png'
+import img71 from './product_71.png'
 
 // Blogs
 import blog1 from "../assets/blogs/blog1.png"
@@ -74,7 +93,7 @@ export const products = [
         category: "Hoodie",
         subCategory: "Awesome",
         sizes: ["S", "M", "L"],
-        date: 1716634345448,
+        date: 1716667345448,
         popular: false
     },
     {
@@ -86,7 +105,7 @@ export const products = [
         category: "Shirt",
         subCategory: "Great",
         sizes: ["M", "L", "XL"],
-        date: 1716621345448,
+        date: 1716667345448,
         popular: false
     },
     {
@@ -98,7 +117,7 @@ export const products = [
         category: "Tote bag",
         subCategory: "Awesome",
         sizes: ["S", "L", "XL"],
-        date: 1716234545448,
+        date: 1716667345448,
         popular: true
     },
     {
@@ -110,7 +129,7 @@ export const products = [
         category: "Shirt",
         subCategory: "Awesome",
         sizes: ["S", "M", "XXL"],
-        date: 1716621345448,
+        date: 1716667345448,
         popular: false
     },
     {
@@ -122,7 +141,7 @@ export const products = [
         category: "Hoodie",
         subCategory: "Great",
         sizes: ["M", "L", "XL"],
-        date: 1716622345448,
+        date: 1716667345448,
         popular: false
     },
     {
@@ -134,7 +153,7 @@ export const products = [
         category: "Shirt",
         subCategory: "Great",
         sizes: ["XL", "S", "M"],
-        date: 1716623345448,
+        date: 1716667345448,
         popular: true
     },
     {
@@ -146,7 +165,7 @@ export const products = [
         category: "Shirt",
         subCategory: "Dope",
         sizes: ["S", "M", "L", "XL"],
-        date: 1716624345448,
+        date: 1716667345448,
         popular: false
     },
     {
@@ -158,7 +177,7 @@ export const products = [
         category: "Shirt",
         subCategory: "Great",
         sizes: ["M", "L", "XL", "XXL"],
-        date: 1716625345448,
+        date: 1716667345448,
         popular: true
     },
     {
@@ -170,7 +189,7 @@ export const products = [
         category: "Tote bag",
         subCategory: "Awesome",
         sizes: ["S", "M", "L"],
-        date: 1716626345448,
+        date: 1716667345448,
         popular: false
     },
     {
@@ -688,7 +707,235 @@ export const products = [
         sizes: ["S", "M", "L", "XL"],
         date: 1716668445448,
         popular: false
-    }
+    },
+    {
+        _id: "53",
+        name: " Zip-Front Relaxed Fit Hoodie",
+        description: "A timeless trench coat with a tailored fit, perfect for any occasion",
+        price: 1820,
+        image: [img53],
+        category: "Shirt",
+        subCategory: "Awesome",
+        sizes: ["S", "M", "L", "XL"],
+        date: 1716627345448,
+        popular: true
+    },
+    {
+        _id: "54",
+        name: " Zip-Front Relaxed Fit Hoodie",
+        description: "A timeless trench coat with a tailored fit, perfect for any occasion",
+        price: 1820,
+        image: [img54],
+        category: "Shirt",
+        subCategory: "Awesome",
+        sizes: ["S", "M", "L", "XL"],
+        date: 1716627345448,
+        popular: true
+    },
+    {
+        _id: "55",
+        name: " Zip-Front Relaxed Fit Hoodie",
+        description: "A timeless trench coat with a tailored fit, perfect for any occasion",
+        price: 1820,
+        image: [img55],
+        category: "Shirt",
+        subCategory: "Awesome",
+        sizes: ["S", "M", "L", "XL"],
+        date: 1716627345448,
+        popular: true
+    },
+    {
+        _id: "56",
+        name: " Zip-Front Relaxed Fit Hoodie",
+        description: "A timeless trench coat with a tailored fit, perfect for any occasion",
+        price: 1820,
+        image: [img56],
+        category: "Shirt",
+        subCategory: "Awesome",
+        sizes: ["S", "M", "L", "XL"],
+        date: 1716627345448,
+        popular: true
+    },
+    {
+        _id: "57",
+        name: " Zip-Front Relaxed Fit Hoodie",
+        description: "A timeless trench coat with a tailored fit, perfect for any occasion",
+        price: 1820,
+        image: [img57],
+        category: "Shirt",
+        subCategory: "Awesome",
+        sizes: ["S", "M", "L", "XL"],
+        date: 1716627345448,
+        popular: true
+    },
+    {
+        _id: "58",
+        name: " Zip-Front Relaxed Fit Hoodie",
+        description: "A timeless trench coat with a tailored fit, perfect for any occasion",
+        price: 1820,
+        image: [img58],
+        category: "Shirt",
+        subCategory: "Awesome",
+        sizes: ["S", "M", "L", "XL"],
+        date: 1716627345448,
+        popular: false
+    },
+    {
+        _id: "59",
+        name: " Zip-Front Relaxed Fit Hoodie",
+        description: "A timeless trench coat with a tailored fit, perfect for any occasion",
+        price: 1820,
+        image: [img59],
+        category: "Shirt",
+        subCategory: "Awesome",
+        sizes: ["S", "M", "L", "XL"],
+        date: 1716627345448,
+        popular: false
+    },
+    {
+        _id: "60",
+        name: " Zip-Front Relaxed Fit Hoodie",
+        description: "A timeless trench coat with a tailored fit, perfect for any occasion",
+        price: 1820,
+        image: [img60],
+        category: "Shirt",
+        subCategory: "Awesome",
+        sizes: ["S", "M", "L", "XL"],
+        date: 1716627345448,
+        popular: false
+    },
+    {
+        _id: "61",
+        name: " Zip-Front Relaxed Fit Hoodie",
+        description: "A timeless trench coat with a tailored fit, perfect for any occasion",
+        price: 1820,
+        image: [img61],
+        category: "Shirt",
+        subCategory: "Awesome",
+        sizes: ["S", "M", "L", "XL"],
+        date: 1716627345448,
+        popular: false
+    },
+    {
+        _id: "62",
+        name: " Zip-Front Relaxed Fit Hoodie",
+        description: "A timeless trench coat with a tailored fit, perfect for any occasion",
+        price: 1820,
+        image: [img62],
+        category: "Shirt",
+        subCategory: "Awesome",
+        sizes: ["S", "M", "L", "XL"],
+        date: 1716627345448,
+        popular: false
+    },
+    {
+        _id: "63",
+        name: " Zip-Front Relaxed Fit Hoodie",
+        description: "A timeless trench coat with a tailored fit, perfect for any occasion",
+        price: 1820,
+        image: [img63],
+        category: "Shirt",
+        subCategory: "Awesome",
+        sizes: ["S", "M", "L", "XL"],
+        date: 1716627345448,
+        popular: false
+    },
+    {
+        _id: "64",
+        name: " Zip-Front Relaxed Fit Hoodie",
+        description: "A timeless trench coat with a tailored fit, perfect for any occasion",
+        price: 1820,
+        image: [img64],
+        category: "Shirt",
+        subCategory: "Awesome",
+        sizes: ["S", "M", "L", "XL"],
+        date: 1716627345448,
+        popular: false
+    },
+    {
+        _id: "65",
+        name: " Zip-Front Relaxed Fit Hoodie",
+        description: "A timeless trench coat with a tailored fit, perfect for any occasion",
+        price: 1820,
+        image: [img65],
+        category: "Shirt",
+        subCategory: "Awesome",
+        sizes: ["S", "M", "L", "XL"],
+        date: 1716627345448,
+        popular: false
+    },
+    {
+        _id: "66",
+        name: " Zip-Front Relaxed Fit Hoodie",
+        description: "A timeless trench coat with a tailored fit, perfect for any occasion",
+        price: 1820,
+        image: [img66],
+        category: "Hoodie",
+        subCategory: "Awesome",
+        sizes: ["S", "M", "L", "XL"],
+        date: 1716627345448,
+        popular: true
+    },
+    {
+        _id: "67",
+        name: " Zip-Front Relaxed Fit Hoodie",
+        description: "A timeless trench coat with a tailored fit, perfect for any occasion",
+        price: 1820,
+        image: [img67],
+        category: "Hoodie",
+        subCategory: "Awesome",
+        sizes: ["S", "M", "L", "XL"],
+        date: 1716627345448,
+        popular: true
+    },
+    {
+        _id: "68",
+        name: " Zip-Front Relaxed Fit Hoodie",
+        description: "A timeless trench coat with a tailored fit, perfect for any occasion",
+        price: 1820,
+        image: [img68],
+        category: "Hoodie",
+        subCategory: "Awesome",
+        sizes: ["S", "M", "L", "XL"],
+        date: 1716627345448,
+        popular: true
+    },
+    {
+        _id: "69",
+        name: " Zip-Front Relaxed Fit Hoodie",
+        description: "A timeless trench coat with a tailored fit, perfect for any occasion",
+        price: 1820,
+        image: [img69],
+        category: "Hoodie",
+        subCategory: "Awesome",
+        sizes: ["S", "M", "L", "XL"],
+        date: 1716627345448,
+        popular: true
+    },
+    {
+        _id: "70",
+        name: " Zip-Front Relaxed Fit Hoodie",
+        description: "A timeless trench coat with a tailored fit, perfect for any occasion",
+        price: 1820,
+        image: [img70],
+        category: "Hoodie",
+        subCategory: "Awesome",
+        sizes: ["S", "M", "L", "XL"],
+        date: 1716627345448,
+        popular: false
+    },
+    {
+        _id: "71",
+        name: " Zip-Front Relaxed Fit Hoodie",
+        description: "A timeless trench coat with a tailored fit, perfect for any occasion",
+        price: 1820,
+        image: [img71],
+        category: "Hoodie",
+        subCategory: "Awesome",
+        sizes: ["S", "M", "L", "XL"],
+        date: 1716667345448,
+        popular: true
+    },
 
 ]
 
