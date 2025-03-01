@@ -81,6 +81,7 @@ const PlaceOrder = () => {
           if (response.data.success) {
             setCartItems({});
             navigate("/orders");
+            window.scrollTo(0, 0);
           } else {
             toast.error(response.data.message);
           }
@@ -95,6 +96,7 @@ const PlaceOrder = () => {
           if (responseStripe.data.success) {
             setCartItems({});
             navigate("/orders");
+            window.scrollTo(0, 0);
           } else {
             toast.error(response.data.message);
           }
