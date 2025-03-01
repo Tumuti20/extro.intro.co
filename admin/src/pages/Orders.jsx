@@ -85,6 +85,7 @@ const Orders = ({ token }) => {
                 <span>{order.address.city + ", "+ order.address.county + ", "+ order.address.country + ", " + order.address.zipcode}</span>
               </p>
               <p>{order.address.phoneNumber}</p>
+              <p>{order.address.email}</p>
             </div>
             <div>
               <p className="text-sm">Total: {order.items.length}</p>
